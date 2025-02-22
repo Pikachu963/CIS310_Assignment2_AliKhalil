@@ -1,0 +1,41 @@
+CIS 310 Assignment 2 Pseudocode Overview:
+SETUP string name
+SETUP data for size of string
+PRINT name
+
+FIRST LOOP:
+	PUSH name character by character onto eax stack
+
+SECOND LOOP:
+	POP eax and MOVE name to al register, reversing string
+
+PRINT reversed string
+
+------------------------------------------------
+
+CIS 310 Assignment 2 Pseudocode:
+SET str1 TO Ali Khalil
+SET nameSize TO size of str1
+(necessary setup...)
+	MOVE offset str1 TO edx
+	CALL writestring
+	MOVE nameSize TO ecx
+	MOVE 0 TO esi
+FIRST LOOP: MOVE (ZERO-EXTENSION) str1[esi] TO eax
+	    PUSH eax
+	    INCREMENT esi
+	    LOOP FIRST LOOP
+
+	MOVE nameSize TO ecx
+	MOVE 0 TO esi
+
+SECOND LOOP: POP eax
+	     MOV str1[esi] TO al
+	     INCREMENT esi
+	     LOOP SECOND LOOP
+	
+	MOVE offset str1 TO eax
+	CALL writestring
+(necessary ending code...)
+
+
